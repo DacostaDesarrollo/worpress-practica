@@ -78,7 +78,8 @@ $table_prefix  = 'wp_';
  * @link https://codex.wordpress.org/Debugging_in_WordPress
  */
 define('WP_DEBUG', false);
-
+define( 'WP_HOME', 'http://67.207.90.189/worpress-practica' );
+define( 'WP_SITEURL', 'http://67.207.90.189/worpress-practica' );
 /* That's all, stop editing! Happy blogging. */
 
 /** Absolute path to the WordPress directory. */

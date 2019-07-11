@@ -1,0 +1,66 @@
+blockquote, q {
+    quotes: "" "";
+
+    &:before,
+    &:after {
+        content: "";
+    }
+}
+
+blockquote {
+    position: relative;
+    display: block;
+    margin: 0 0 3px;
+    padding: 26px 0;
+    overflow: hidden;
+    font-size: 22px;
+    text-align: center;
+    line-height: 1.5;
+    color: $color__accent;
+    &:before,
+    &:after {
+        display: block;
+        font-size: 14px;
+        line-height: 1;
+        height: 0.5em;
+        width: 50%;
+        position: absolute;
+        top: 0;
+        border-bottom: 1px solid $color__border;
+        font-style: normal;
+        text-align: left;
+        color: $color__highlight;
+    }
+    &:before {
+        content: '.';
+        left: 0;
+        margin-left: -15px;
+    }
+    &:after {
+        content: '\f097';
+        right: 0;
+        text-indent: -20px;
+        font-family: FontAwesome;
+        margin-right: -15px;
+    }
+    p:last-child {
+        margin-bottom: 0;
+    }
+    cite {
+        display: block;
+        margin-top: 16px;
+        &:before {
+            content: '–\A0';
+        }
+    }
+}
+
+cite {
+    font-size: 11px;
+    font-style: normal;
+    text-transform: uppercase;
+    font-family: $font__headings;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    color: $color__highlight;
+}

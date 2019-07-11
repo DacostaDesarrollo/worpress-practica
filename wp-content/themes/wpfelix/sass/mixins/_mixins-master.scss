@@ -1,0 +1,79 @@
+// Rem output with px fallback
+@mixin font-size($sizeValue: 1) {
+    font-size: ($sizeValue * 16) * 1px;
+    font-size: $sizeValue * 1rem;
+}
+
+// Center block
+@mixin center-block{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+// Clearfix before
+@mixin clearfix-before() {
+    content: "";
+    display: table;
+    table-layout: fixed;
+}
+
+// Clear after (not all clearfix need this also)
+@mixin clearfix-after() {
+    clear: both;
+}
+
+// Clearfix
+@mixin clearfix( $elem: 08121991 ) {
+    @if $elem == 08121991 {
+        &:before,
+        &:after {
+            content: "";
+            display: table;
+        }
+        &:after {
+            clear: both;
+        }
+        
+    } @else {
+        #{$elem}:before,
+        #{$elem}:after {
+            content: "";
+            display: table;
+        }
+        #{$elem}:after {
+            clear: both;
+        }
+    }
+}
+
+// Placeholder
+@mixin placeholder( $elem: 08121991 ) {
+    @if ( $elem == 08121991 ) {
+        &::-webkit-input-placeholder {
+            @content;
+        }
+        &:-moz-placeholder {
+            @content;
+        }
+        &::-moz-placeholder {
+            @content;
+        }
+        &:-ms-input-placeholder {
+            @content;
+        }
+    } @else {
+        #{$elem}::-webkit-input-placeholder {
+            @content;
+        }
+        #{$elem}:-moz-placeholder {
+            @content;
+        }
+        #{$elem}::-moz-placeholder {
+            @content;
+        }
+        #{$elem}:-ms-input-placeholder {
+            @content;
+        }
+    }
+}

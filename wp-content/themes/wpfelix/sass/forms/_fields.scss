@@ -1,0 +1,62 @@
+@include placeholder() {
+    font-size: 11px;
+    font-style: italic;
+    color: $color__muted;
+    opacity: 1;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
+textarea,
+select,
+.form-field {
+    font-size: 13px;
+}
+
+.form-field {
+    display: inline-block;
+    height: 37px;
+    line-height: 23px;
+    padding: 6px 20px;
+    color: $color__text-input;
+    border: 1px solid $color__weak;;
+    border-radius: 0;
+    box-shadow: none;
+    background: $color__weak;;
+
+    &:focus {
+        color: $color__text-input-focus;
+    }
+}
+
+.form-field-full {
+    width: 100%;
+}
+
+input[type="search"].form-field {
+    appearance: textfield;
+}
+
+select {
+    height: 35px;
+}
+textarea {
+    width: 100%;
+    &.form-field {
+        height: auto;
+        line-height: 1.6;
+    }
+}

@@ -1,0 +1,46 @@
+@import "buttons";
+
+@import "fields";
+
+.search-form {
+    position: relative;
+    > label {
+        display: block;
+    }
+}
+.search-field {
+    width: 100%;
+    padding-right: 36px;
+    font-family: $font__headings;
+    font-style: normal;
+    border: 1px solid $color__border;
+    background-color: transparent;
+    @include placeholder() {
+        font-size: 11px;
+        font-style: inherit;
+        text-transform: uppercase;
+        color: $color__highlight;
+        opacity: 1;
+        letter-spacing: 0.1em;
+    }
+}
+
+.search-submit {
+    border: none;
+    background: none;
+    color: $color__highlight;
+    display: block;
+    height: 100%;
+    border-radius: 0;
+    position: absolute;
+    right: 10px;
+    top: 0;
+    padding: 0 10px 4px;
+    box-shadow: none;
+    transition: color 240ms;
+
+    &:hover,
+    &:focus {
+        color: $color__accent;
+    }
+}

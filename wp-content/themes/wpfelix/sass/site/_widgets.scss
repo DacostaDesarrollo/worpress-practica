@@ -1,0 +1,821 @@
+.widget {
+    margin: 0 0 40px;
+
+    /* Make sure select elements fit in widgets. */
+    select {
+        max-width: 100%;
+    }
+}
+
+.widget-title {
+    font-size: 11px;
+    line-height: 15px;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-align: center;
+    padding: 10px 16px;
+    border: 1px solid $color__accent;
+    margin-bottom: 20px;
+}
+
+.widget_recent_entries,
+.widget_recent_comments,
+.widget_categories,
+.widget_archive,
+.widget_pages,
+.widget_meta,
+.widget_tag_cloud,
+.widget_nav_menu {
+    a {
+        text-decoration: none;
+    }
+}
+
+.widget_recent_entries,
+.widget_recent_comments,
+.widget_categories,
+.widget_archive {
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        li {
+            color: $color__muted;
+            padding-bottom: 13px;
+
+            &:last-child {
+                padding-bottom: 0;
+            }
+            a {
+                color: $color__highlight;
+                &:hover,
+                &:focus {
+                    color: $color__link-hover;
+                }
+            }
+            + li {
+                padding-top: 13px;
+                border-top: 1px solid $color__border;
+            }
+        }
+    }
+}
+
+.widget_recent_entries {
+    ul {
+        .post-date {
+            font-size: 12px;
+            font-style: italic;
+        }
+    }
+}
+
+.widget_recent_comments {
+    .comment-author-link {
+        color: $color__highlight;
+    }
+}
+
+.widget_categories {
+    ul {
+        ul {
+            padding-left: 20px;
+            margin-left: 0;
+            position: relative;
+            clear: both;
+            padding-top: 27px;
+            &:before {
+                content: '';
+                display: block;
+                position: absolute;
+                left: 0;
+                top: 13px;
+                right: 0;
+                border-top: 1px solid $color__border;
+            }
+        }
+    }
+}
+
+.widget_categories,
+.widget_archive {
+    ul {
+        li {
+            font-size: 14px;
+            line-height: 18px;
+            font-style: italic;
+            text-align: right;
+            @include clearfix();
+            a {
+                float: left;
+                text-align: left;
+            }
+        }
+    }
+}
+
+.widget_meta {
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+            font-family: $font__headings;
+            font-size: 11px;
+            line-height: 15px;
+            text-transform: uppercase;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            a {
+                color: $color__highlight;
+                &:hover,
+                &:focus {
+                    color: $color__link-hover;
+                }
+            }
+        }
+    }
+}
+
+.widget_nav_menu,
+.widget_pages {
+    @extend .widget_meta;
+    ul ul {
+        padding-top: 10px;
+        padding-left: 20px;
+        margin-bottom: -10px;
+    }
+}
+
+.widget_pages ul li.current_page_ancestor,
+.widget_pages ul li.current_page_parent,
+.widget_pages ul li.current_page_item,
+.widget_categories ul li.current-cat-ancestor,
+.widget_categories ul li.current-cat,
+.widget_nav_menu ul li.current-menu-ancestor,
+.widget_nav_menu ul li.current-menu-parent,
+.widget_nav_menu ul li.current-menu-item {
+    > a {
+        color: $color__accent;
+    }
+}
+
+.widget_rss {
+    .widget-title {
+        a {
+            display: inline-block;
+            vertical-align: middle;
+            font-size: inherit;
+            line-height: inherit;
+        }
+        img {
+            display: block;
+            max-width: 16px;
+        }
+    }
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        li {
+            padding-bottom: 16px;
+            + li {
+                padding-top: 16px;
+                border-top: 1px solid $color__border;
+            }
+            &:last-child {
+                padding-bottom: 0;
+            }
+        }
+    }
+    .rsswidget {
+        font-family: $font__headings;
+        font-size: 13px;
+        color: $color__highlight;
+        display: block;
+        line-height: 1.4;
+        &:hover,
+        &:focus {
+            color: $color__link-hover;
+        }
+    }
+    .rss-date {
+        font-style: italic;
+        color: $color__muted;
+        font-size: 11px;
+    }
+    .rssSummary {
+        font-size: 13px;
+    }
+    cite {
+        line-height: 1.4;
+        display: block;
+        &:before {
+            content: '-\A0';
+        }
+    }
+    * + .rssSummary,
+    * + cite {
+        margin-top: 10px;
+    }
+}
+
+.widget_tag_cloud {
+    .tagcloud {
+        font-family: $font__headings;
+        a {
+            color: $color__highlight;
+            transition: color 240ms;
+            &:hover,
+            &:focus {
+                color: $color__link-hover;
+            }
+        }
+    }
+    &.use-theme-style {
+        .tagcloud {
+            font-size: 11px;
+            margin: -5px -1px;
+            a {
+                font-size: inherit !important;
+                line-height: 1;
+                display: inline-block;
+                border: 1px solid #EEE; /* Colors: General -> Border Color */
+                padding: 4px 11px;
+                text-transform: uppercase;
+                color: #b2b2b2; /* Colors: General -> Text Light Color */
+                margin: 5px 1px;
+                transition: border-color 240ms, color 240ms;
+
+                &:hover,
+                &:focus {
+                    border-color: #cea352; /* Colors: General -> Accent Color */
+                    color: #cea352; /* Colors: General -> Accent Color */
+                }
+            }
+        }
+    }
+}
+
+
+.widget_calendar {
+    #next {
+        text-align: right;
+    }
+}
+
+// ABOUT WIDGET
+//--------------------------------------------------
+
+.widget_wpfelix_about {
+    text-align: center;
+    .my-name {
+        font-size: 11px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        font-weight: normal;
+        color: $color__accent;
+        margin-bottom: 13px;
+    }
+    .my-image,
+    .my-signature {
+        img {
+            @include center-block();
+        }
+    }
+    .my-image {
+        margin-bottom: 14px;
+        img {
+            width: 240px;
+            max-width: 100%;
+        }
+    }
+    .my-image-rounded {
+        img {
+            border-radius: 50%;
+        }
+    }
+    .my-desc {
+        margin-bottom: 21px;
+        >:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+
+// INSTAGRAM
+//--------------------------------------------------
+
+.widget_wpfelix_instagram {
+    .wpfelix-insta-images {
+        text-align: center;
+    }
+    .wpfelix-insta-images a,
+    img {
+        display: block;
+    }
+    .image {
+        display: inline-block;
+        vertical-align: top;
+    }
+    .wpfelix-insta-usr {
+        font-size: 11px;
+        letter-spacing: 0.1em;
+        line-height: 15px;
+        font-weight: normal;
+        text-align: center;
+        position: relative;
+        z-index: 1;
+        margin-bottom: -27px;
+        > a {
+            display: inline-block;
+            background-color: rgba( 255, 255, 255, 0.95 );
+            padding: 6px 16px;
+            transition: all 240ms;
+
+            &:hover,
+            &:focus {
+                color: $color__background-body;
+                background-color: $color__accent;
+            }
+        }
+    }
+}
+
+.wpfelix-insta-images-c1 {
+    .image {
+        display: block;
+    }
+}
+
+.wpfelix-insta-images-c2 {
+    .image {
+        max-width: 50%;
+    }
+}
+.wpfelix-insta-images-c3 {
+    .image {
+        max-width: 33.3333333333%;
+    }
+}
+.wpfelix-insta-images-c4 {
+    .image {
+        max-width: 25%;
+    }
+}
+.wpfelix-insta-images-c5 {
+    .image {
+        max-width: 20%;
+    }
+}
+.wpfelix-insta-images-c6 {
+    .image {
+        max-width: 16.6666666667%;
+    }
+}
+.wpfelix-insta-images-c7 {
+    .image {
+        max-width: 14.2857142857%;
+    }
+}
+.wpfelix-insta-images-c8 {
+    .image {
+        max-width: 12.5%;
+    }
+}
+
+
+// SOCIAL
+//--------------------------------------------------
+
+.widget_wpfelix_social {
+    .list-social {
+        text-align: center;
+        margin-left: -13px;
+        margin-right: -13px;
+        margin-bottom: 0;
+        li {
+            font-size: 16px;
+            line-height: 1;
+            padding-left: 13px;
+            padding-right: 13px;
+        }
+    }
+}
+
+
+// POPULAR POSTS
+//--------------------------------------------------
+
+.widget_wpfelix_popular_posts {
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        li + li {
+            margin-top: 14px;
+        }
+    }
+    .entry-featured {
+        margin-bottom: 10px;
+        img {
+            margin: 0;
+            display: inline-block;
+        }
+    }
+    .entry-title {
+        font-size: 15px;
+        font-weight: 500;
+        letter-spacing: 0.05em;
+        margin-bottom: 0;
+    }
+    .entry-posted-on {
+        font-size: 12px;
+        color: $color__muted;
+        font-style: italic;
+        a {
+            color: inherit;
+
+            &:hover,
+            &:focus {
+                color: $color__accent;
+            }
+        }
+    }
+}
+
+
+// RECENT POSTS
+//--------------------------------------------------
+
+.widget_wpfelix_recent_posts {
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        li {
+            display: table;
+            width: 100%;
+        }
+        li + li {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid $color__border;
+        }
+    }
+    .entry-featured,
+    .entry-summary {
+        display: table-cell;
+        vertical-align: middle;
+    }
+    .entry-featured {
+        margin: 0;
+        padding-right: 20px;
+        a {
+            display: block;
+            width: 100px;
+        }
+    }
+    .entry-summary {
+        width: 100%;
+    }
+    .entry-title {
+        font-size: 13px;
+        font-weight: 500;
+        letter-spacing: 0.05em;
+        margin-bottom: 0;
+    }
+    .entry-posted-on {
+        font-size: 12px;
+        color: $color__muted;
+        font-style: italic;
+        a {
+            color: inherit;
+
+            &:hover,
+            &:focus {
+                color: $color__accent;
+            }
+        }
+    }
+}
+
+
+// NEWSLETTER
+//--------------------------------------------------
+
+.widget_newsletterwidget {
+    background-color: $color__highlight;
+    padding: 20px 20px 40px 20px;
+    font-size: 12px;
+    color: $color__background-body;
+    .widget-title {
+        color: $color__background-body;
+        border: none;
+        padding: 16px 0;
+        position: relative;
+        margin-bottom: 23px;
+        background-color: transparent;
+        &:after {
+            content: '';
+            display: block;
+            width: 50px;
+            max-width: 100%;
+            border-bottom: 1px solid $color__accent;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX( -50% );
+        }
+    }
+    .newsletter-email {
+        font-size: 12px;
+        font-style: italic;
+        color: $color__muted;
+        background-color: #FFF;
+        height: 37px;
+        border: none;
+        padding-left: 20px;
+        padding-right: 20px;
+        width: 100%;
+    }
+    .newsletter-submit {
+        font-family: $font__headings;
+        font-size: 12px;
+        line-height: 1.25;
+        text-transform: uppercase;
+        color: $color__button;
+        display: block;
+        width: 100%;
+        border: 1px solid $color__accent;
+        background: $color__button_bg;
+        padding: 10px 28px;
+        transition: color 240ms, background-color 240ms;
+
+        &:hover,
+        &:active,
+        &:focus {
+            color: $color__button_hover;
+            background-color: transparent;
+        }
+    }
+    form {
+        > p {
+            margin-bottom: 0;
+            + p {
+                margin-top: 15px;
+            }
+        }
+    }
+}
+
+
+// LATEST TWEETS
+//--------------------------------------------------
+
+.widget_wpfelix_latest_tweets {
+    .tweets-container {
+        text-align: center;
+    }
+    .tweet {
+        margin-bottom: 10px;
+    }
+    .tweet-at {
+        font-style: italic;
+        font-size: 12px;
+        color: $color__muted;
+        a {
+            color: inherit;
+            &:hover,
+            &:focus {
+                color: $color__accent;
+            }
+        }
+    }
+    .user {
+        font-family: $font__headings;
+        margin-bottom: 6px;
+    }
+    .avatar {
+        margin-bottom: 8px;
+        line-height: 1;
+        a {
+            display: inline-block;
+        }
+        img {
+            max-width: 48px;
+            border-radius: 48px;
+        }
+    }
+    .tweet-icon {
+        margin-right: 5px;
+    }
+    .owl-dots {
+        text-align: inherit;
+        font-size: 0;
+        margin-top: 23px;
+    }
+    .owl-dot {
+        width: 7px;
+        height: 7px;
+        border-radius: 7px;
+        display: inline-block;
+        margin-left: 3px;
+        margin-right: 3px;
+
+        background-color: $color__muted;
+        transition: background-color 240ms;
+        &:hover,
+        &.active {
+            background-color: $color__highlight;
+        }
+    }
+}
+
+
+// IMAGES WIDGET
+//--------------------------------------------------
+
+.widget_wpfelix_images {
+    overflow: hidden;
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 -10px -20px;
+        li {
+            display: inline-block;
+            vertical-align: top;
+            padding-left: 20px;
+            padding-bottom: 10px;
+            width: 100%;
+        }
+        &.columns-2 {
+            li {
+                max-width: 50%;
+            }
+        }
+        &.columns-3 {
+            li {
+                max-width: 33.3333333333%;
+            }
+        }
+        &.columns-4 {
+            li {
+                max-width: 25%;
+            }
+        }
+        &.columns-5 {
+            li {
+                max-width: 20%;
+            }
+        }
+        &.columns-6 {
+            li {
+                max-width: 16.6666666667%;
+            }
+        }
+    }
+    img {
+        display: inline-block;
+    }
+}
+
+.widget_wpfelix_image {
+    img {
+        display: inline-block;
+    }
+}
+
+// CUSTOM SIDE TEXT
+//--------------------------------------------------
+
+.widget_text.footer-text-menu {
+    text-align: center;
+    .textwidget {
+        margin-left: -5px;
+        margin-right: -5px;
+    }
+    a {
+        display: inline-block;
+        font-size: 11px;
+        color: $color__muted;
+        text-decoration: none;
+        margin-left: 5px;
+        margin-right: 5px;
+
+        &:hover,
+        &:focus {
+            color: $color__accent;
+        }
+    }
+}
+
+
+// LOWER WIDGET AREA
+//--------------------------------------------------
+
+.lower-widget-area {
+    margin-bottom: 65px;
+    .grid-container {
+        overflow: hidden;
+        > .inner {
+            @include clearfix();
+        }
+    }
+}
+
+@media( min-width: 768px ) {
+    .lower-widget-area-c2 {
+        .grid-container > .inner {
+            margin-left: -30px;
+        }
+        .lwa-col {
+            width: 50%;
+            padding-left: 30px;
+            float: left;
+        }
+    }
+}
+
+@media( min-width: 980px ) {
+    .lower-widget-area-c3 {
+        .grid-container > .inner {
+            margin-left: -30px;
+        }
+        .lwa-col {
+            width: 33.3333333333%;
+            padding-left: 30px;
+            float: left;
+        }
+    }
+}
+
+@media( min-width: 1230px ) {
+    .lower-widget-area-c3 {
+        .grid-container > .inner {
+            margin-left: -75px;
+        }
+        .lwa-col {
+            padding-left: 75px;
+        }
+    }
+}
+
+
+// LOWER ALT ( Instagram )
+//--------------------------------------------------
+
+.lower-alt-widget-area {
+    border-top: 1px solid $color__border;
+    .widget:last-child {
+        margin-bottom: 0;
+    }
+    .widget-title {
+        margin: 20px 20px 0 20px;
+    }
+    .widget_wpfelix_instagram {
+        .wpfelix-insta-usr {
+            margin-bottom: 0;
+            padding-top: 21px;
+            padding-bottom: 21px;
+            > a,
+            > a:hover,
+            > a:focus {
+                background-color: transparent;
+                padding: 0;
+            }
+            > a:hover,
+            > a:focus {
+                color: $color__highlight;
+            }
+        }
+    }
+    .image {
+        > a {
+            display: block;
+            position: relative;
+            &:after {
+                content: '';
+                display: block;
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                visibility: hidden;
+                opacity: 0;
+                background-color: #FFF;
+                transition: visibility 240ms, background-color 240ms, opacity 240ms;
+            }
+            &:hover,
+            &:focus {
+                &:after {
+                    visibility: visible;
+                    opacity: 0.5;
+                }
+            }
+        }
+    }
+}

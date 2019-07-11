@@ -1,0 +1,30 @@
+table {
+    
+}
+
+table {
+    border-bottom: 1px solid $color__border;
+    border-collapse: collapse;
+    border-spacing: 0;
+    font-size: 14px;
+    line-height: 1.4;
+    margin: 0 0 $line-height__body * 1em;
+    width: 100%;
+    //table-layout: fixed;
+}
+
+th,
+td {
+    font-weight: normal;
+    text-align: left;
+    padding: 8px 10px 8px 0;
+}
+
+th {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+td {
+    border-top: 1px solid $color__border;
+}

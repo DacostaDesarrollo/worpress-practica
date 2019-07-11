@@ -1,0 +1,27 @@
+.wp-caption {
+    margin-top: 0;
+    margin-bottom: 25px;
+    max-width: 100%;
+
+    img[class*="wp-image-"] {
+        @include center-block();
+    }
+
+    .wp-caption-text {
+        padding: 11px 0 7px;
+    }
+
+    &.alignleft,
+    &.alignnone {
+        margin-left: 0;
+    }
+    &.alignright,
+    &.alignnone {
+        margin-right: 0;
+    }
+}
+
+.wp-caption-text {
+    font-size: 13px;
+    color: $color__muted;
+}

@@ -1,0 +1,21 @@
+.felix-contact-form-content {
+    .submit-box {
+        position: relative;
+
+        .ajax-loader {
+            margin: 0;
+            position: absolute;
+            left: auto;
+            top: 6px;
+            right: 6px;
+            border-radius: 2px;
+            padding: 30p;
+            width: 25px;
+            height: 25px;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-color: #fff;
+            opacity: 0.75;
+        }
+    }
+}

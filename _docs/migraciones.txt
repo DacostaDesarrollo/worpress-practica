@@ -1,0 +1,7 @@
+UPDATE xj_options SET option_value = replace(option_value, 'http://motorsxtremejam.com', 'http://localhost/bestialshow') WHERE option_name = 'home' OR option_name = 'siteurl';
+
+UPDATE xj_posts SET guid = replace(guid, 'http://motorsxtremejam.com','newurl.com');
+
+UPDATE xj_posts SET post_content = replace(post_content, 'http://motorsxtremejam.com', 'http://localhost/bestialshow');
+
+UPDATE xj_postmeta SET meta_value = replace(meta_value,'http://motorsxtremejam.com','http://localhost/bestialshow');

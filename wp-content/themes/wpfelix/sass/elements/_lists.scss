@@ -1,0 +1,46 @@
+ul {
+    list-style: disc;
+}
+
+ol {
+    list-style: decimal;
+}
+
+li > ul,
+li > ol {
+    margin-bottom: 0;
+    margin-left: 1.5em;
+}
+
+dt {
+    font-weight: bold;
+}
+
+dd {
+    margin: 0 1.5em 1.5em;
+}
+
+.list-social {
+    list-style: none;
+    padding-left: 0;
+    margin-left: -8px;
+    margin-right: -8px;
+    li {
+        display: inline-block;
+        padding-left: 4px;
+        padding-right: 4px;
+        a {
+            display: block;
+            padding-left: 4px;
+            padding-right: 4px;
+            color: $color__highlight;
+            text-decoration: none;
+            transition: color 240ms, background-color 240ms, box-shadow 240ms;
+
+            &:hover,
+            &:focus {
+                color: $color__accent;
+            }
+        }
+    }
+}

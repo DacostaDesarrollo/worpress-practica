@@ -1,0 +1,53 @@
+.infinite-scroll .posts-navigation,
+.infinite-scroll.neverending .site-footer {
+    display: none;
+}
+
+.infinity-end.neverending .site-footer {
+    display: block;
+}
+
+.infinite-loader {
+    text-align: center;
+    position: relative;
+    text-indent: 0 !important;
+    font-size: 0;
+    > .spinner {
+        display: none !important;
+    }
+
+    &:before,
+    &:after {
+        content: '';
+        display: inline-block;
+        vertical-align: middle;
+    }
+    &:before {
+        width: 26px;
+        height: 26px;
+        border-radius: 26px;
+        box-shadow: inset 0px 0px 0px 4px $color__accent;
+    }
+    &:after {
+        width: 24px;
+        height: 24px;
+        border-radius: 24px;
+        border: 2px solid transparent;
+        border-left-color: $color__background-body;
+        animation: jp-rotate 1s linear infinite;
+        margin-left: -25px;
+    }
+}
+
+@keyframes jp-rotate {
+    100% {
+        transform: rotate( 360deg );
+    }
+}
+
+.infinite-scroll-page-num {
+    padding: 10px 24px;
+    background-color: $color__weak;;
+    text-align: center;
+    margin-bottom: 80px;
+}

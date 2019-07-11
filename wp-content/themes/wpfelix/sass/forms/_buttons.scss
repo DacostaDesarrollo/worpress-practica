@@ -1,0 +1,38 @@
+.button {
+    font-family: $font__headings;
+    font-size: 12px;
+    line-height: 1.25;
+    text-transform: uppercase;
+    color: $color__button;
+    display: inline-block;
+    vertical-align: top;
+    border: none;
+    background: $color__button_bg;
+    padding: 11px 28px;
+    letter-spacing: 0.1em;
+    transition: color 240ms, background-color 240ms;
+
+    &:hover,
+    &:active,
+    &:focus {
+        color: $color__button_hover;
+        background-color: $color__button_bg_hover;
+    }
+}
+.button-alt {
+    color: $color__button_alt;
+    background-color: $color__button_alt_bg;
+    &:hover,
+    &:active,
+    &:focus {
+        color: $color__button_alt_hover;
+        background-color: $color__button_alt_bg_hover;
+    }
+}
+.button-block {
+    display: block;
+    width: 100%;
+}
+a.button {
+    text-decoration: none;
+}

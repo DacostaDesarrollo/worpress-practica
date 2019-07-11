@@ -78,8 +78,19 @@ $table_prefix  = 'wp_';
  * @link https://codex.wordpress.org/Debugging_in_WordPress
  */
 define('WP_DEBUG', false);
-define( 'WP_HOME', 'http://67.207.90.189/worpress-practica' );
-define( 'WP_SITEURL', 'http://67.207.90.189/worpress-practica' );
+//define( 'WP_HOME', 'http://67.207.90.189/worpress-practica' );
+//define( 'WP_SITEURL', 'http://67.207.90.189/worpress-practica' );
+
+
+if ( defined( 'RELOCATE' ) AND RELOCATE ) {
+  // Move flag is set
+  if ( isset( $_SERVER['PATH_INFO'] ) AND ($_SERVER['PATH_INFO'] != $_SERVER['PHP_SELF']) )
+        $_SERVER['PHP_SELF'] = str_replace( $_SERVER['PATH_INFO'], "", $_SERVER['PHP_SELF'] );
+    $url = dirname( set_url_scheme( 'http://'. $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'] ) );
+    if ( $url != get_option( 'siteurl' ) )
+        update_option( 'siteurl', $url );
+}
+
 /* That's all, stop editing! Happy blogging. */
 
 /** Absolute path to the WordPress directory. */

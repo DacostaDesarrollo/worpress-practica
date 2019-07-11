@@ -18,7 +18,7 @@ if ( version_compare( $GLOBALS['wp_version'], '4.5', '<' ) )
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  */
-function wpfelix_setup() 
+function wpfelix_setup()
 {
     load_theme_textdomain( 'wpfelix', get_template_directory() . '/languages' );
 
@@ -144,6 +144,8 @@ function wpfelix_widgets_init()
 }
 add_action( 'widgets_init', 'wpfelix_widgets_init' );
 
+//update_option( 'siteurl', 'http://67.207.90.189/worpress-practica');
+//update_option( 'home', 'http://67.207.90.189/worpress-practica  ');
 
 /**
  * Enqueue scripts and styles.
